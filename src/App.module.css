@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 6.5px;
     max-width: 50%;
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -36,7 +36,10 @@
 }
 
 .mining_time {
-    opacity: 0.5;
+    opacity: 0.6;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #111;
     margin-bottom: 1rem;
     text-align: center;
     max-width: 50%;
@@ -47,13 +50,9 @@
 }
 
 @media (max-width: 600px) {
-    .block {
+    .block, .mining_time {
         max-width: 80%;
-        font-size: x-small;
-    }
-
-    .mining_time {
-        max-width: 80%;
-        font-size: x-small;
+        font-size: 1.5vw;
+        padding: 1rem;
     }
 }
