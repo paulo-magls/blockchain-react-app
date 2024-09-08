@@ -1,0 +1,21 @@
+.mining_info {
+    opacity: 0.6;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #111;
+    margin-bottom: 1rem;
+    text-align: center;
+    max-width: 50%;
+
+    p {
+        color: #FFF;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1280px) {
+    .mining_info {
+        max-width: 80%;
+        font-size: 1.5vw;
+        padding: 1rem;
+    }
+}

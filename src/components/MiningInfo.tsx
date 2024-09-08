@@ -1,0 +1,19 @@
+import React from 'react';
+import classes from './MiningInfo.module.css';
+
+interface MiningInfoProps {
+  sequence: number;
+  mineTime: number;
+  minedHash: string;
+}
+
+const MiningInfo: React.FC<MiningInfoProps> = ({ sequence, mineTime, minedHash }) => {
+  return (
+    <div className={classes.mining_info}>
+      <p>Bloco #{sequence} minerado em {mineTime} segundos.</p>
+      <p>Hash de Mineração: {minedHash}</p>
+    </div>
+  );
+};
+
+export default MiningInfo;

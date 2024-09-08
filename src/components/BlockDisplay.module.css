@@ -1,0 +1,22 @@
+.block {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 6.5px;
+    max-width: 50%;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    h2, p {
+        padding: .5rem 0;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1280px) {
+    .block {
+        max-width: 80%;
+        font-size: 1.5vw;
+        padding: 1rem;
+    }
+}
