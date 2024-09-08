@@ -46,7 +46,6 @@ const BlockchainControls: React.FC<BlockchainControlsProps> = ({
           value={quantity}
           placeholder="Por padrão é 10"
           min="1"
-          max="10"
           onChange={(e) => setQuantity(e.target.value)}
           disabled={isMining}
         />
