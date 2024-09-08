@@ -1,0 +1,59 @@
+.app {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+}
+
+.block {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 50%;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    h1 {
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+
+    h2, p {
+        padding: .5rem 0;
+    }
+
+    button {
+        background-color: #111;
+        border-radius: 5px;
+        padding: .5rem;
+        color: #fff;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+    }
+}
+
+.mining_time {
+    opacity: 0.5;
+    margin-bottom: 1rem;
+    text-align: center;
+    max-width: 50%;
+
+    p {
+        color: #FFF;
+    }
+}
+
+@media (max-width: 600px) {
+    .block {
+        max-width: 80%;
+        font-size: x-small;
+    }
+
+    .mining_time {
+        max-width: 80%;
+        font-size: x-small;
+    }
+}
