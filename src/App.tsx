@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 function App() {
   const [difficulty, setDifficulty] = useState('');
   const [quantity, setQuantity] = useState('');
-  const [chain, setChain] = useState<{ block: Block; mineTime: number }[]>([]);
+  const [chain, setChain] = useState<{ block: Block; minedHash: string; mineTime: number }[]>([]);
 
   // Adicionando estado para controlar mineração
   const [isMining, setIsMining] = useState(false);
@@ -35,7 +35,7 @@ function App() {
 
       setChain((prevChain) => [
         ...prevChain, 
-        { block: mineInfo.minedBlock, mineTime: mineInfo.mineTime }
+        { block: mineInfo.minedBlock, minedHash: mineInfo.minedHash, mineTime: mineInfo.mineTime }
       ]);
 
       // Simula um pequeno delay para melhor visualização
@@ -82,7 +82,7 @@ function App() {
         </p>
       </div>
 
-      {chain.map(({ block, mineTime }, index) => (
+      {chain.map(({ block, minedHash, mineTime }, index) => (
         <>
           <div key={index} className={classes.block}>
             <h2>Header</h2>
@@ -98,6 +98,7 @@ function App() {
           
           <div className={classes.mining_time}>
             <p>Bloco #{block.payload.sequence} minerado em {mineTime} segundos.</p>
+            <p>Hash de Mineração: {minedHash}</p>
           </div>
         </>
       ))}

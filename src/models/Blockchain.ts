@@ -62,13 +62,11 @@ export class BlockChain {
         prefix: this.powPrefix
       })) {
         const endTime = +new Date()
-        const shortHash = blockHash.slice(0, 12)
         const mineTime = (endTime - startTime) / 1000
 
         return {
           minedBlock: { payload: { ...block }, header: { nonce, blockHash } },
           minedHash: proofingHash,
-          shortHash,
           mineTime
         }
       }
@@ -78,7 +76,7 @@ export class BlockChain {
 
   verifyBlock (block: Block) {
     if (block.payload.previousHash !== this.getPreviousBlockHash()) {
-      console.error(`Bloco inválido #${block.payload.sequence}: O hash do bloco anterior é "${this.getPreviousBlockHash().slice(0, 12)}" não "${block.payload.previousHash.slice(0, 12)}".`)
+      console.error(`Bloco #${block.payload.sequence} inválido: O hash do bloco anterior é "${this.getPreviousBlockHash().slice(0, 12)}" não "${block.payload.previousHash.slice(0, 12)}".`)
       return
     }
 
@@ -87,7 +85,7 @@ export class BlockChain {
       difficulty: this.difficulty,
       prefix: this.powPrefix
     })) {
-      console.error(`Bloco inválido #${block.payload.sequence}: O hash não é a prova, nonce ${block.header.nonce} não é válido.`)
+      console.error(`Bloco #${block.payload.sequence} inválido: O hash não é a prova, nonce ${block.header.nonce} não é válido.`)
       return
     }
 
