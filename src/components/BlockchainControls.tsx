@@ -22,6 +22,8 @@ const BlockchainControls: React.FC<BlockchainControlsProps> = ({
     <div className={classes.blockchain_controls}>
       <h1>Blockchain Generator</h1>
 
+      <small>Desenvolvido por <a href="https://github.com/paulo-magls" target='blank'>paulo-magls</a></small>
+
       <p>
         <label htmlFor="difficulty">Dificuldade de Mineração: </label>
         <input
