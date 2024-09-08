@@ -11,7 +11,7 @@ const MiningInfo: React.FC<MiningInfoProps> = ({ sequence, mineTime, minedHash }
   return (
     <div className={classes.mining_info}>
       <p>Bloco #{sequence} minerado em {mineTime} segundos.</p>
-      <p>Hash de Mineração: {minedHash}</p>
+      <p>Hash Minerado: {minedHash}</p>
     </div>
   );
 };
