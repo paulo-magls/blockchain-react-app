@@ -32,6 +32,7 @@ const BlockchainControls: React.FC<BlockchainControlsProps> = ({
           value={difficulty}
           placeholder="Por padrão é 4"
           min="1"
+          max="10"
           onChange={(e) => setDifficulty(e.target.value)}
           disabled={isMining}
         />
@@ -45,6 +46,7 @@ const BlockchainControls: React.FC<BlockchainControlsProps> = ({
           value={quantity}
           placeholder="Por padrão é 10"
           min="1"
+          max="10"
           onChange={(e) => setQuantity(e.target.value)}
           disabled={isMining}
         />
