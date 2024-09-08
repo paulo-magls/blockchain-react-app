@@ -27,8 +27,11 @@ function App() {
     await new Promise((resolve) => setTimeout(resolve, 500));
     setIsMining(true);
 
-    const blockchain = new BlockChain(+difficulty || 4);
-    const blockNumber = +quantity || 10;
+    const validatedDifficulty = +difficulty < 0 ? 0 : +difficulty;
+    const validatedQuantity = +quantity < 0 ? 0 : +quantity;
+
+    const blockchain = new BlockChain(validatedDifficulty || 4);
+    const blockNumber = validatedQuantity || 10;
 
     for (let i = 1; i <= blockNumber; i++) {
       const block = blockchain.createBlock(`Bloco ${i}`);
