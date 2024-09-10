@@ -27,8 +27,8 @@ function App() {
     await new Promise((resolve) => setTimeout(resolve, 500));
     setIsMining(true);
 
-    const validatedDifficulty = +difficulty < 0 ? 0 : +difficulty;
-    const validatedQuantity = +quantity < 0 ? 0 : +quantity;
+    const validatedDifficulty = +difficulty < 1 ? 0 : +difficulty;
+    const validatedQuantity = +quantity < 1 ? 0 : +quantity;
 
     const blockchain = new BlockChain(validatedDifficulty || 4);
     const blockNumber = validatedQuantity || 10;
